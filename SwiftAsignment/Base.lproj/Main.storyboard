@@ -7,7 +7,6 @@
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
-        <capability name="Navigation items with more than one left or right bar item" minToolsVersion="7.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -52,14 +51,11 @@
                     </view>
                     <navigationItem key="navigationItem" title="Popular News" id="SJe-1i-CgD">
                         <barButtonItem key="leftBarButtonItem" image="Hamburger" id="J96-J7-giF"/>
-                        <rightBarButtonItems>
-                            <barButtonItem image="Vertical_More" id="1sx-Qj-hPN"/>
-                            <barButtonItem systemItem="search" id="Wad-pT-wi0">
-                                <connections>
-                                    <action selector="didTapSearchButtonItem:" destination="BYZ-38-t0r" id="qfq-tW-ih8"/>
-                                </connections>
-                            </barButtonItem>
-                        </rightBarButtonItems>
+                        <barButtonItem key="rightBarButtonItem" systemItem="search" id="Wad-pT-wi0">
+                            <connections>
+                                <action selector="didTapSearchButtonItem:" destination="BYZ-38-t0r" id="qfq-tW-ih8"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                     <connections>
                         <outlet property="NewsTableView" destination="Iza-EB-d0Z" id="tpa-Mu-9FG"/>
@@ -137,19 +133,6 @@
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2dk-G7-hWf">
-                                        <rect key="frame" x="20" y="500" width="343" height="54"/>
-                                        <color key="backgroundColor" red="0.60340544870000001" green="0.60340544870000001" blue="0.60340544870000001" alpha="1" colorSpace="calibratedRGB"/>
-                                        <constraints>
-                                            <constraint firstAttribute="height" constant="54" id="RyZ-dW-qNU"/>
-                                        </constraints>
-                                        <state key="normal" title="Button">
-                                            <color key="titleColor" red="0.96078431369999995" green="0.96078431369999995" blue="0.96078431369999995" alpha="1" colorSpace="calibratedRGB"/>
-                                        </state>
-                                        <connections>
-                                            <action selector="didTapDetailsButton:" destination="X9K-rf-M2l" eventType="touchUpInside" id="oHw-IE-SPp"/>
-                                        </connections>
-                                    </button>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="poS-Qf-Kh9">
                                         <rect key="frame" x="20" y="340" width="343" height="176"/>
                                         <constraints>
@@ -168,25 +151,22 @@
                                     <constraint firstItem="poS-Qf-Kh9" firstAttribute="top" secondItem="DbG-xw-dcF" secondAttribute="bottom" constant="8" id="2QF-Gu-Zwr"/>
                                     <constraint firstItem="oQ3-1k-Acm" firstAttribute="leading" secondItem="khh-PN-x3l" secondAttribute="leading" constant="-239" id="41X-1O-fXM"/>
                                     <constraint firstItem="BgB-bE-5sB" firstAttribute="leading" secondItem="DbG-xw-dcF" secondAttribute="leading" id="68h-pg-3Nd"/>
-                                    <constraint firstAttribute="bottom" secondItem="2dk-G7-hWf" secondAttribute="bottom" constant="49" id="91o-8k-G0e"/>
                                     <constraint firstItem="poS-Qf-Kh9" firstAttribute="top" secondItem="oQ3-1k-Acm" secondAttribute="bottom" constant="158" id="BGK-Ns-AD6"/>
                                     <constraint firstAttribute="trailing" secondItem="8Fc-jr-0KK" secondAttribute="trailing" constant="20" id="CLr-3j-feT"/>
+                                    <constraint firstAttribute="bottom" secondItem="poS-Qf-Kh9" secondAttribute="bottom" constant="87" id="J24-om-Nva"/>
                                     <constraint firstItem="BgB-bE-5sB" firstAttribute="top" secondItem="8Fc-jr-0KK" secondAttribute="bottom" constant="6" id="Jvq-Gj-yg3"/>
                                     <constraint firstItem="8Fc-jr-0KK" firstAttribute="leading" secondItem="u3h-Za-hAx" secondAttribute="leading" constant="20" id="Njt-N4-QMZ"/>
                                     <constraint firstItem="8Fc-jr-0KK" firstAttribute="leading" secondItem="BgB-bE-5sB" secondAttribute="leading" id="OYp-ue-BhI"/>
                                     <constraint firstItem="8Fc-jr-0KK" firstAttribute="top" secondItem="u3h-Za-hAx" secondAttribute="top" constant="34" id="UkK-xL-DBE"/>
-                                    <constraint firstItem="poS-Qf-Kh9" firstAttribute="trailing" secondItem="2dk-G7-hWf" secondAttribute="trailing" id="cJX-dW-NbX"/>
                                     <constraint firstItem="DbG-xw-dcF" firstAttribute="top" secondItem="oQ3-1k-Acm" secondAttribute="top" constant="63" id="cca-6a-uWq"/>
                                     <constraint firstItem="oQ3-1k-Acm" firstAttribute="leading" secondItem="DbG-xw-dcF" secondAttribute="trailing" constant="-343" id="cov-jm-Akj"/>
                                     <constraint firstItem="8Fc-jr-0KK" firstAttribute="centerX" secondItem="u3h-Za-hAx" secondAttribute="centerX" id="h3l-KG-w4R"/>
                                     <constraint firstItem="poS-Qf-Kh9" firstAttribute="top" secondItem="khh-PN-x3l" secondAttribute="bottom" constant="282" id="ioS-4R-ghb"/>
-                                    <constraint firstItem="poS-Qf-Kh9" firstAttribute="leading" secondItem="2dk-G7-hWf" secondAttribute="leading" id="k6a-NQ-5PV"/>
                                     <constraint firstItem="8Fc-jr-0KK" firstAttribute="leading" secondItem="u3h-Za-hAx" secondAttribute="leading" constant="20" id="pgh-gd-hcF"/>
                                     <constraint firstItem="oQ3-1k-Acm" firstAttribute="trailing" secondItem="poS-Qf-Kh9" secondAttribute="trailing" id="tMe-DR-SlF"/>
                                     <constraint firstItem="khh-PN-x3l" firstAttribute="top" secondItem="BgB-bE-5sB" secondAttribute="bottom" constant="-109" id="taa-JA-DsW"/>
                                     <constraint firstAttribute="trailing" secondItem="8Fc-jr-0KK" secondAttribute="trailing" constant="20" id="xVJ-bG-Pro"/>
                                     <constraint firstItem="BgB-bE-5sB" firstAttribute="trailing" secondItem="oQ3-1k-Acm" secondAttribute="trailing" id="ygt-EP-3bb"/>
-                                    <constraint firstItem="2dk-G7-hWf" firstAttribute="top" secondItem="poS-Qf-Kh9" secondAttribute="bottom" constant="-16" id="yub-2b-5mZ"/>
                                 </constraints>
                             </scrollView>
                             <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="whiteLarge" translatesAutoresizingMaskIntoConstraints="NO" id="NtZ-3r-Uyv">
@@ -212,7 +192,6 @@
                         <outlet property="abstractLabel" destination="poS-Qf-Kh9" id="edH-Nt-78I"/>
                         <outlet property="ac" destination="NtZ-3r-Uyv" id="pgE-TU-gnW"/>
                         <outlet property="byLineLabel" destination="oQ3-1k-Acm" id="SB8-u0-dPM"/>
-                        <outlet property="moreDetailsButton" destination="2dk-G7-hWf" id="2RS-qd-COS"/>
                         <outlet property="previewImageView" destination="DbG-xw-dcF" id="mJ2-0Z-MvW"/>
                         <outlet property="publishDateLabel" destination="khh-PN-x3l" id="se9-hu-2kF"/>
                         <outlet property="sectionLabel" destination="8Fc-jr-0KK" id="OGz-eI-Emi"/>
@@ -226,6 +205,5 @@
     </scenes>
     <resources>
         <image name="Hamburger" width="26" height="22"/>
-        <image name="Vertical_More" width="7" height="24"/>
     </resources>
 </document>

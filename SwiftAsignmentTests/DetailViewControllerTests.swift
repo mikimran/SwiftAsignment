@@ -34,26 +34,6 @@ class DetailViewControllerTests: XCTestCase {
         
     }
     
-    func testdidTapDetailsButton(){
-        
-        detailItem.url = "https://google.com"
-        detailVC.detailItem = detailItem
-
-        /// Intialize button to pass didTapDetailsButton
-        let tabbutton = UIButton()
-        
-        XCTAssertNotNil(detailVC.didTapDetailsButton(tabbutton), "didTapDetailsButton method called with url string")
-        
-        detailVC.detailItem = nil
-        
-        XCTAssertNotNil(detailVC.didTapDetailsButton(tabbutton),
-            "didTapDetailsButton method called without url string")
-
-        
-        
-        
-    }
-    
     override func tearDown() {
         // Put teardown code here. This method is called after the invocation of each test method in the class.
         super.tearDown()

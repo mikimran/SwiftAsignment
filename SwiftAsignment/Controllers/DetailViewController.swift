@@ -18,7 +18,6 @@ class DetailViewController: UIViewController {
     @IBOutlet weak var byLineLabel: UILabel!
     @IBOutlet weak var publishDateLabel: UILabel!
     @IBOutlet weak var previewImageView: UIImageView!
-    @IBOutlet weak var moreDetailsButton: UIButton!
     @IBOutlet var ac: UIActivityIndicatorView!
     // Properties
     var detailItem: News?
@@ -51,9 +50,7 @@ class DetailViewController: UIViewController {
             
             
             self.publishDateLabel.text = "🗓 "+(Utilities.splitstring(withstring: (dItem.published_date)!))
-            
-            self.moreDetailsButton.setTitle("See Full", for: .normal)
-            
+                        
             self.previewImageView?.image = UIImage(named: DetailView.PlaceholderImageName)
             
             
@@ -80,37 +77,6 @@ class DetailViewController: UIViewController {
                 }
             }
         }
-    }
-    
-    // MARK: - Button Actions
-    @IBAction func didTapDetailsButton(_ sender: Any) {
-        
-        
-        guard let dItem = detailItem else {
-            return
-        }
-        if let urlstring = dItem.url{
-            
-            let url = URL(string: urlstring)
-            
-            if UIApplication.shared.canOpenURL(url!) {
-                
-                UIApplication.shared.open(url!, options: [:], completionHandler: nil)
-                
-            }
-            else {
-                
-                self.alert(message: "PROBLEM".localized(withComment: "Problem")+(dItem.url)!, title:"APP_NANE".localized(withComment: "APP_NANE"))
-            
-            }
-        }
-        else {
-            
-            self.alert(message: "NO_DATA".localized(withComment: "NO_DATA"), title:"Error")
-            
-            
-        }
-        
     }
     
 }
