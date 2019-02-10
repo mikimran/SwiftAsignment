@@ -1,0 +1,16 @@
+/* 
+  Localizable.strings
+  SwiftAsignment
+
+  Created by MOHAMMED IMRAN on 2/10/19.
+  Copyright © 2019 MOHAMMED IMRAN. All rights reserved.
+*/
+"TITLE" = "Popular News";
+
+"NO_INTERNET" =  "No internet connection";
+
+"NO_DATA"     =  "Data not found";
+
+"APP_NANE"    =  "SwiftAsignment";
+
+"PROBLEM"     =  "There was a problem when trying to open";

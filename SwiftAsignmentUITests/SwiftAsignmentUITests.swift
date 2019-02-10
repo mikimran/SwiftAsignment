@@ -28,9 +28,19 @@ class SwiftAsignmentUITests: XCTestCase {
         super.tearDown()
     }
     
-    func testExample() {
+    
+        func testExample() {
         // Use recording to get started writing UI tests.
         // Use XCTAssert and related functions to verify your tests produce the correct results.
+            
+            let app = XCUIApplication()
+            
+            
+            app.tables/*@START_MENU_TOKEN@*/.staticTexts["In a backyard in Erie, Pa., an unusual cardinal has appeared, displaying both male and female traits. Scientists say it may be a so-called gynandromorph."]/*[[".cells.staticTexts[\"In a backyard in Erie, Pa., an unusual cardinal has appeared, displaying both male and female traits. Scientists say it may be a so-called gynandromorph.\"]",".staticTexts[\"In a backyard in Erie, Pa., an unusual cardinal has appeared, displaying both male and female traits. Scientists say it may be a so-called gynandromorph.\"]"],[[[-1,1],[-1,0]]],[0]]@END_MENU_TOKEN@*/.tap()
+            
+            
+            app.navigationBars["Popular News"].buttons["Popular News"].tap()
+            
     }
     
 }
