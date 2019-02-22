@@ -34,8 +34,8 @@ class ViewModel: NSObject {
         super.init()
 
         ///Get the NewsData from the service api.
-        ServiceManager.sharedInstance.getNewsList({ [unowned self] (response)  in
-            self.Newsdata = response as! NewsData
+        ServiceManager.sharedInstance.getData({ [unowned self] (response : NewsData)  in
+            self.Newsdata = response
         }) { (error) in
             self.viewModelDelegate?.didFailed()
         }

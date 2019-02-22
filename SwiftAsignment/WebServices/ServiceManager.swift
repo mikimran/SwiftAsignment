@@ -29,7 +29,7 @@ class ServiceManager{
     
     static let sharedInstance = ServiceManager()
     
-    func getNewsList(_ completion: @escaping (_ response:AnyObject?)->(),
+    func getData<T : Decodable>(_ completion: @escaping (T)->(),
                       onError: @escaping (_ error:Error)->()) {
         
         let newsURL =  ServiceUrl.getNewsData
@@ -38,8 +38,9 @@ class ServiceManager{
         
             do {
                 
-                let getNews = try JSONDecoder().decode(NewsData.self, from: responseData as! Data)
-                completion(getNews as AnyObject)
+                let obj = try JSONDecoder().decode(
+                T.self, from: responseData as! Data)
+                completion(obj)
                 
             } catch {
                 print(error.localizedDescription)

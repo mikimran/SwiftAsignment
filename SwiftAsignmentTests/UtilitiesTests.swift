@@ -34,4 +34,13 @@ class UtilitiesTests: XCTestCase {
         XCTAssertTrue(string.isEmpty)
     }
     
+    
+    func testlocalized() {
+        //To validate string is not empty
+        let string = "TITLE".localized(withComment: "TITLE")
+        
+        XCTAssertTrue(!string.isEmpty)
+    }
+    
+    
 }
