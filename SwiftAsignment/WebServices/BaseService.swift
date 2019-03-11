@@ -73,13 +73,13 @@ class BaseService: NSObject {
                 
                 switch httpResponse.statusCode{
                     
-                    case 200:
+                    case HTTPStatusCodes.OK.rawValue:
                         success(data as AnyObject)
                         break
-                    case 400:
+                    case HTTPStatusCodes.BadRequest.rawValue:
                         failure(error! as NSError)
                         break
-                    case 500:
+                    case HTTPStatusCodes.InternalServerError.rawValue:
                         failure(error! as NSError)
                         break
                     default:
