@@ -1,0 +1,64 @@
+## Build generated
+.DS_Store
+.idea/
+build/
+BuildLog/
+Output/
+DerivedData/
+DerivedData
+build.xcarchive
+.scannerwork
+xcov_output/
+fastlane/report.xml
+fastlane/test_output
+*.dSYM.zip
+*.app.zip
+
+## Various settings
+*.pbxuser
+!default.pbxuser
+*.mode1v3
+!default.mode1v3
+*.mode2v3
+!default.mode2v3
+*.perspectivev3
+!default.perspectivev3
+*.xcworkspace/xcuserdata
+*.xccodeproj/xcuserdata
+xcuserdata/
+
+## Other
+*.xccheckout
+*.moved-aside
+*.xcuserstate
+*.xcscmblueprint
+
+## Obj-C/Swift specific
+*.hmap
+*.ipa
+
+# CocoaPods
+Pods
+Pods/
+Podfile.lock
+
+
+# Carthage
+Carthage/Checkouts
+
+## Xcode generated when there is a conflict
+*.orig
+
+## Ruby files
+Gemfile.lock
+
+## Ignoring User Specific files
+./MapWithAnnotations.xcworkspace/xcuserdata/
+*.xcworkspace/xcuserdata
+*.xccodeproj/xcuserdata
+*xcworkspace/xcuserdata/*
+xcuserdata/
+
+## L10n Files
+## Combined.strings
+## L10n.swift

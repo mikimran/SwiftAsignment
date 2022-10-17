@@ -1,0 +1,73 @@
+# This file contains the fastlane.tools configuration
+# You can find the documentation at https://docs.fastlane.tools
+#
+# For a list of all available actions, check out
+#
+#     https://docs.fastlane.tools/actions
+#
+# For a list of all available plugins, check out
+#
+#     https://docs.fastlane.tools/plugins/available-plugins
+#
+
+# Uncomment the line if you want fastlane to automatically update itself
+# update_fastlane
+
+default_platform(:ios)
+buildNumber = "#{ENV['BUILD_NAME']}.#{ENV['BUILD_NUMBER']}"
+
+platform :ios do
+
+  
+  lane :lint do
+    swiftlint(
+      mode: :lint,                                    # SwiftLint mode: :lint (default) or :autocorrect
+      executable: "./Pods/SwiftLint/swiftlint",       # The SwiftLint binary path (optional). Important if you have installed it via CocoaPods
+      output_file: "Output/swiftlint.result.json",	      # The path of the output file (optional)
+      reporter: "checkstyle",                         # The custom reporter to use (optional)
+      config_file: ".swiftlint.yml",                   # The path of the configuration file (optional)
+      quiet: false
+    )
+  end
+
+  lane :tests do
+    # https://docs.fastlane.tools/actions/scan/
+  	run_tests(
+      workspace: "MapWithAnnotations.xcworkspace",
+      scheme: "MapWithAnnotations",
+      device: ["iPhone 11 Pro"].sample,
+      code_coverage: true,
+      clean: true,
+      skip_build: true,
+      output_types: "html,junit,json-compilation-database",
+      output_style: "basic",
+      buildlog_path: "BuildLog",
+      output_directory: "Output",
+      derived_data_path: "DerivedData",
+      #slack_url: "https://hooks.slack.com/services/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"
+    )
+    # https://docs.fastlane.tools/actions/xcov/
+    # xcov(
+    #   workspace: "Warba Online.xcworkspace",
+    #   scheme: "Debug",
+    #   output_directory: "xcov_output",
+    #   derived_data_path: "build",
+    #   legacy_support: "false",
+    #   ignore_file_path: "Pods",
+    #   only_project_targets: true
+    #   #slack_url: "https://hooks.slack.com/services/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"
+    # )
+  end
+
+lane :simbuild do |options|
+  scan(
+    scheme: options[:scheme] ? options[:scheme] : "Debug",
+    clean: true,
+    skip_build: false,
+    buildlog_path: "BuildLog",
+    output_directory: "Output",
+    derived_data_path: "DerivedData",
+    build_for_testing: true
+  )
+end
+end
