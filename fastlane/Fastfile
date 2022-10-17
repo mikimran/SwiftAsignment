@@ -33,8 +33,8 @@ platform :ios do
   lane :tests do
     # https://docs.fastlane.tools/actions/scan/
   	run_tests(
-      workspace: "MapWithAnnotations.xcworkspace",
-      scheme: "MapWithAnnotations",
+      workspace: "SwiftAsignment.xcworkspace",
+      scheme: "SwiftAsignment",
       device: ["iPhone 11 Pro"].sample,
       code_coverage: true,
       clean: true,
